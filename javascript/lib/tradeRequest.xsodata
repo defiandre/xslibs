@@ -1,0 +1,6 @@
+// URI: https://tcipn1sap01.tci.internal.toyota.ca:51064/tradeRequest.xsodata/tradeRequest/
+service  {
+
+"Emre_Test.testDB::dealerTrade.tradeRequest" as "tradeRequest";
+
+}

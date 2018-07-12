@@ -1,0 +1,31 @@
+ID: Emre_Test
+_schema-version: '2.0'
+version: 0.0.1
+modules:
+  - name: testDB
+    type: hdb
+    path: testDB
+    requires:
+      - name: hdi-container
+  - name: javascript
+    type: nodejs
+    path: javascript
+    provides:
+      - name: javascript_api
+        properties:
+          url: '${default-url}'
+    requires:
+      - name: testDB
+      - name: hdi-container
+      - name: EXTERNAL_HTTP
+resources:
+  - name: hdi-container
+    properties:
+      hdi-container-name: '${service-name}'
+    type: com.sap.xs.hdi-container
+  - name: EXTERNAL_HTTP
+    type: org.cloudfoundry.existing-service
+    parameters:
+      service-name: EXTERNAL_HTTP
+    properties:
+      EXTERNAL_HTTP_SERVICE: '${service-name}'

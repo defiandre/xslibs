@@ -1,0 +1,12 @@
+namespace Emre_Test.testDB;
+
+//@OData.publish : true
+context dealerTrade {
+
+entity tradeRequest
+{
+  key requestID : String(50); 
+  requestDescription: String(100);
+}
+
+};
